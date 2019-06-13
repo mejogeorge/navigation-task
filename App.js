@@ -11,6 +11,7 @@ import { Platform, StyleSheet, Text, View } from 'react-native';
 import { createAppContainer, createStackNavigator } from "react-navigation";
 import Home from "./components/Home";
 import DetailsScreen from "./components/Details";
+import Clock from"./components/Clock";
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -23,16 +24,17 @@ const instructions = Platform.select({
 
 const navigator = createStackNavigator(
   {
-    Home: Home,
-    Details: DetailsScreen
+    Home : Home,
+    Details : DetailsScreen,
+    clock : Clock
   },
   {
     initialRouteName: 'Home',
     defaultNavigationOptions: {
       headerStyle: {
-        backgroundColor: '#f4511e',
+        backgroundColor: '#45CE30',
       },
-      headerTintColor: '#fff',
+      headerTintColor: 'white',
       headerTitleStyle: {
         fontWeight: 'bold',
       },

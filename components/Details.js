@@ -2,20 +2,19 @@ import React,{Component} from "react"
 import {Text,Button,StyleSheet,View} from "react-native"
 
  export default class DetailsScreen extends React.Component {
-     static navigationOptions = ({navigation}) => title=navigation.getParam('otherParam','rekshayilla')
 
-    // static navigationOptions = ({ navigation }) => {
-    //     return {
-    //       title: navigation.getParam('otherParam', 'A Nested Details Screen'),
-    //     };
-    //   };
+    static navigationOptions = ({ navigation }) => {
+        return {
+          title: navigation.getParam('otherParam', 'A Nested Details Screen'),
+        };
+      };
 
 
     render() {
         const propObject = this.props.navigation.state.params
         // const name = this.props.navigation.getParam('itemId', 'NO-ID');
-                otherParam:'anything you want here',
-                console.warn('name:',propObject.itemId,propObject.otherParam)
+                // otherParam:'anything you want here',
+                // console.warn('name:',propObject.itemId,propObject.otherParam)
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <Text>Details Screen:{propObject.itemId}</Text>
@@ -41,6 +40,10 @@ import {Text,Button,StyleSheet,View} from "react-native"
           <Button
           title ='pop to top'
           onPress={()=> this.props.navigation.popToTop('Home')}
+          />
+          <Button
+          title='Clock'
+          onPress={()=>this.props.navigation.push('clock',{name:'Time'})}
           />
         </View>
       );
